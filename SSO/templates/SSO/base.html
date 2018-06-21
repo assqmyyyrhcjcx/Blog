@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<head>
+
+	<title>用户表单</title>
+
+	<!-- Meta-Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //Meta-Tags -->
+
+	<!-- Style --> <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all">
+{#    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">#}
+{#    <script src="{% static 'js/bootstrap.js' %}"></script>#}
+
+
+
+</head>
+<!-- //Head -->
+
+<!-- Body -->
+<body>
+
+	<h1>用户表单</h1>
+
+	<div class="container w3layouts agileits">
+
+		{% block login %}
+            <div>登录模块</div>
+        {% endblock %}
+
+        {% block register %}
+            <div>注册模块</div>
+        {% endblock %}
+		<div class="clear"></div>
+
+	</div>
+
+</body>
+<!-- //Body -->
+
+</html>
