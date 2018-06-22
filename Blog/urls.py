@@ -20,6 +20,7 @@ from Blog import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('sso/', include('SSO.urls')),
+    path('blogs/', include('myblog.urls')),
     path('', views.index_redirect),
-    path('index', views.index, name='nav')
+    path('index', views.index, name='index')
 ]

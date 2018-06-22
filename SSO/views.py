@@ -35,9 +35,10 @@ def loginAction(request):
     user = auth.authenticate(username=username, password=password)
     if user:
         auth.login(request, user)
-        return render(request, 'SSO/register.html')
+        request.session['username'] = username
+        return HttpResponseRedirect('/')
     else:
-        return render(request, 'SSO/base.html')
+        return render(request, 'SSO/login.html')
 
 @csrf_exempt
 def registerAction(request):
@@ -52,10 +53,10 @@ def registerAction(request):
             phone = form.cleaned_data['phone']
 
             # 判断用户是否存在
-            user = auth.authenticate(username = username,password = password)
+            user = auth.authenticate(username=username,password=password)
             if user:
                 context['userExit']=True
-                return render(request, 'SSO/register.html', context)
+                return render(request, 'SSO/login.html', context)
 
             #添加到数据库（还可以加一些字段的处理）
             user = User.objects.create_user(username=username, password=password, email=email, phone=phone)

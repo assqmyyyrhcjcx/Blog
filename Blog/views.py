@@ -5,8 +5,8 @@ from django.urls import reverse
 
 def index_redirect(request):
     return HttpResponseRedirect(
-        reverse('nav')
+        reverse('index')
     )
 
 def index(request):
-    return render(request, 'nav.html')
+    return render(request, 'content.html')

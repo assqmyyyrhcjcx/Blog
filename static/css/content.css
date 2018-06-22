@@ -1,0 +1,109 @@
+.blogscontent{
+    width: 1000px;
+    display: flex;
+}
+
+.left{
+    width: 650px;
+    margin: 10px 0px;
+}
+
+.right{
+    width: 300px;
+    height: 400px;
+    margin-left: 50px;
+    margin-top: 30px;
+    background-color: #FFF;
+    position: relative;
+}
+
+.note-list{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.note-item{
+    height: 130px;
+    display: flex;
+    align-items: center;
+    background-color: #FFF;
+    margin: 5px 0px;
+    padding: 10px;
+}
+
+.note-info{
+    width: 500px;
+}
+
+.note-info a{
+    color: #000;
+}
+
+.note-info span{
+    color: #999;
+}
+
+.note-item img{
+    width: 125px;
+    height: 100px;
+}
+
+.recommend{
+    color: #999;
+    margin: 10px;
+
+}
+
+.recommend span{
+}
+
+.recommend a{
+    color: #999;
+    position: absolute;
+    right: 10px;
+}
+
+.author-list ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.author-list li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 10px;
+}
+
+.author-list li img{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+
+.author-info{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name{
+    color: #000;
+}
+
+.author-words{
+    font-size: 12px;
+    color: #999;
+}
+
+.follow{
+    position: absolute;
+    right: 10px;
+}

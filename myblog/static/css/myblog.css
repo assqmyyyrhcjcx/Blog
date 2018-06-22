@@ -1,0 +1,68 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0px;
+    margin: 10px 0px;
+}
+
+.userblog{
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.userinfo{
+    display: flex;
+    background-color: #FFF;
+    margin: 0px 10px;
+}
+
+.portrait{
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+}
+
+.portrait img{
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+
+.userdetail{
+    height: 40px;
+}
+
+.meta-block{
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-block a{
+    color: #999;
+}
+
+.userlike{
+    display: flex;
+    margin: 0px 5px;
+}
+.line{
+    width: 1px;
+    height: 40px;
+    background-color: #999;
+    margin: 0px 5px;
+}
+
+.article{
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 30px 20px;
+    margin: 10px;
+    background-color: #FFF;
+}
+
+.article span{
+    color: #999;
+}
