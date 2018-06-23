@@ -1,9 +1,17 @@
 .article-title{
     width: 800px;
-    height: 50px;
+    height: 100px;
+}
+
+.input-group{
+    margin: 20px 0px;
 }
 
 #article-content{
     width: 800px;
-    height: 400px;
+    margin-top: 10px;
+}
+
+.operate{
+    margin-top: 30px;
 }

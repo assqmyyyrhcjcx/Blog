@@ -63,71 +63,21 @@
         </div>
         <div class="author-list">
             <ul>
-                <li>
-                    <a href=""><img src="{% static 'images/ed2ea7f3-9d7d-41fc-a05a-daebb8097b0c.jpg' %}" alt=""></a>
-                    <div class="author-info">
-                        <a href=""><span class="author-name">须僧</span></a>
-                        <span class="author-words">写了122.5k字 · 825喜欢</span>
-                    </div>
-                    <div class="follow">
-                        <a href="">
-                            <span class="glyphicon glyphicon-refresh" style="color: rgb(212, 226, 246);"></span>
-                            关注
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <a href=""><img src="{% static 'images/ed2ea7f3-9d7d-41fc-a05a-daebb8097b0c.jpg' %}" alt=""></a>
-                    <div class="author-info">
-                        <a href=""><span class="author-name">须僧</span></a>
-                        <span class="author-words">写了122.5k字 · 825喜欢</span>
-                    </div>
-                    <div class="follow">
-                        <a href="">
-                            <span class="glyphicon glyphicon-refresh" style="color: rgb(212, 226, 246);"></span>
-                            关注
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <a href=""><img src="{% static 'images/ed2ea7f3-9d7d-41fc-a05a-daebb8097b0c.jpg' %}" alt=""></a>
-                    <div class="author-info">
-                        <a href=""><span class="author-name">须僧</span></a>
-                        <span class="author-words">写了122.5k字 · 825喜欢</span>
-                    </div>
-                    <div class="follow">
-                        <a href="">
-                            <span class="glyphicon glyphicon-refresh" style="color: rgb(212, 226, 246);"></span>
-                            关注
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <a href=""><img src="{% static 'images/ed2ea7f3-9d7d-41fc-a05a-daebb8097b0c.jpg' %}" alt=""></a>
-                    <div class="author-info">
-                        <a href=""><span class="author-name">须僧</span></a>
-                        <span class="author-words">写了122.5k字 · 825喜欢</span>
-                    </div>
-                    <div class="follow">
-                        <a href="">
-                            <span class="glyphicon glyphicon-refresh" style="color: rgb(212, 226, 246);"></span>
-                            关注
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <a href=""><img src="{% static 'images/ed2ea7f3-9d7d-41fc-a05a-daebb8097b0c.jpg' %}" alt=""></a>
-                    <div class="author-info">
-                        <a href=""><span class="author-name">须僧</span></a>
-                        <span class="author-words">写了122.5k字 · 825喜欢</span>
-                    </div>
-                    <div class="follow">
-                        <a href="">
-                            <span class="glyphicon glyphicon-refresh" style="color: rgb(212, 226, 246);"></span>
-                            关注
-                        </a>
-                    </div>
-                </li>
+                {% for user in users %}
+                    <li>
+                        <a href=""><img src="{% static 'images/ed2ea7f3-9d7d-41fc-a05a-daebb8097b0c.jpg' %}" alt=""></a>
+                        <div class="author-info">
+                            <a href=""><span class="author-name">{{ user.username }}</span></a>
+                            <span class="author-words">写了122.5k字 · 0喜欢</span>
+                        </div>
+                        <div class="follow">
+                            <a href="">
+                                <span class="glyphicon glyphicon-refresh" style="color: rgb(212, 226, 246);"></span>
+                                关注
+                            </a>
+                        </div>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
     </div>

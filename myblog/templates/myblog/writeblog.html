@@ -3,14 +3,23 @@
 {% block writeblog %}
     <div class="writeblog">
         <div class="article-title">
+            <input type="text" name="articleid" style="display: none" value="{{ article.id }}">
             <div class="input-group">
                 <span class="input-group-addon">标题</span>
-                <input type="text" class="form-control" placeholder="请输入文章标题">
+                <input type="text" name="headline" class="form-control" placeholder="请输入文章标题">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">描述</span>
+                <input type="text" name="desc" class="form-control" placeholder="请输入文章基本介绍">
             </div>
         </div>
         </div>
         <div id="article-content">
 
+        </div>
+        <div class="operate">
+            <button name="reset" type="button" class="btn btn-default">重置</button>
+            <button name="submit" type="button" class="btn btn-success">提交</button>
         </div>
     </div>
 {% endblock %}

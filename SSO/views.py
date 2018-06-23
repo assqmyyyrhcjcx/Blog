@@ -1,5 +1,6 @@
 from django.contrib import auth
 from django import forms
+from django.contrib.auth import logout
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
@@ -34,8 +35,8 @@ def loginAction(request):
 
     user = auth.authenticate(username=username, password=password)
     if user:
-        auth.login(request, user)
         request.session['username'] = username
+        auth.login(request, user)
         return HttpResponseRedirect('/')
     else:
         return render(request, 'SSO/login.html')
@@ -72,3 +73,7 @@ def registerAction(request):
         context = {'isLogin':False}
     #将req 、页面 、以及context{}（要传入html文件中的内容包含在字典里）返回
     return render(request,'SSO/register.html',context)
+
+def logoutAction(request):
+    logout(request)
+    return HttpResponseRedirect('/')

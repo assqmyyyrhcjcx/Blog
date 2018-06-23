@@ -7,48 +7,54 @@
                 <img src="{% static 'images/2259045-2986b9be86b01f63.jpg' %}" alt="">
             </div>
             <div class="userdetail">
-                <h5>{{ username }}XXXXXXXXXXXX</h5>
+                <h5>{{ user.username }}</h5>
                 <div class="userlike">
                     <div class="meta-block">
-                        <span>3</span>
+                        <span>0</span>
                         <a href=""><span>关注></span></a>
                     </div>
                     <span class="line"></span>
                     <div class="meta-block">
-                        <span>3</span>
+                        <span>0</span>
                         <a href=""><span>粉丝></span></a>
                     </div>
                     <span class="line"></span>
                     <div class="meta-block">
-                        <span>3</span>
+                        <span>
+                            {% if articleNum %}
+                                {{ articleNum }}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </span>
                         <a href=""><span>文章></span></a>
                     </div>
                     <span class="line"></span>
                     <div class="meta-block">
-                        <span>3</span>
+                        <span>
+                            {% if words %}
+                                {{ words }}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </span>
                         <a href=""><span>字数></span></a>
                     </div>
                     <span class="line"></span>
                     <div class="meta-block">
-                        <span>3</span>
+                        <span>0</span>
                         <a href=""><span>收获喜欢></span></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="blogs">
-            <div class="article">
-                <h4>MongoDB基本命令</h4>
-                <span>1.创建一个存放MongoDB的文件夹，例如: E:\MongoDB 2.在此文件夹中创建三个文件夹，分别为：data、etc、logs 3.在.</span>
-            </div>
-            <div class="article">
-                <h4>MongoDB基本命令</h4>
-                <span>1.创建一个存放MongoDB的文件夹，例如: E:\MongoDB 2.在此文件夹中创建三个文件夹，分别为：data、etc、logs 3.在.</span>
-            </div>
-            <div class="article">
-                <h4>MongoDB基本命令</h4>
-                <span>1.创建一个存放MongoDB的文件夹，例如: E:\MongoDB 2.在此文件夹中创建三个文件夹，分别为：data、etc、logs 3.在.</span>
-            </div>
+            {% for blog in blogs %}
+                <div class="article">
+                    <h4>{{ blog.title }}</h4>
+                    <span>{{ blog.desc }}</span>
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
