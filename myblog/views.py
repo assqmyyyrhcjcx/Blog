@@ -70,9 +70,13 @@ def write(request):
     article.wordcount = wordcount
     article.updatetime = updatetime
 
+    # 添加字数
+    user.words = user.words + wordcount
+
     result = {}
     try:
         article.save()
+        user.save()
         result['status'] = 200
     except Exception:
         result['status'] = 500
