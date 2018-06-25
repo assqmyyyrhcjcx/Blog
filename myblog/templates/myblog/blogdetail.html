@@ -1,8 +1,11 @@
 {% extends 'index.html' %}
 {% load static %}
-{% block myblog %}
-    <div class="userblog">
-        <div class="userinfo">
+{% block blogdetail %}
+    <div class="blogdetail">
+        <div class="detail-title">
+            <h3>{{ blog.title }}</h3>
+        </div>
+        <div class="article-author">
             <div class="portrait">
                 <img src="{% static 'images/2259045-2986b9be86b01f63.jpg' %}" alt="">
             </div>
@@ -48,20 +51,16 @@
                 </div>
             </div>
         </div>
-        <div class="blogs">
-            {% if blogs %}
-                {% for blog in blogs %}
-                <div class="article">
-                    <a href="{% url 'blogdetail' blog.id%}"><h4>{{ blog.title }}</h4></a>
-                    <span>{{ blog.desc }}</span>
-                </div>
-                {% endfor %}
-            {% else %}
-                <div class="no-article">
-                    <h4>该博主还未发表过文章！</h4>
-                </div>
-            {% endif %}
-
+        <div class="detail-desc">
+            <span>{{ blog.desc }}</span>
+        </div>
+        <div class="detail-content">
+            {% autoescape off %}
+                {{ blog.content }}
+            {% endautoescape %}
         </div>
     </div>
+    <script>
+        $('.detail-content').html()
+    </script>
 {% endblock %}

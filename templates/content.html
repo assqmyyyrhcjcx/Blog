@@ -5,51 +5,17 @@
     <div class="left">
         <div class="list-container">
             <ul class="note-list">
-                <li class="note-item">
-                    <div class="note-info">
-                        <h4><a href="">胡歌12年后首谈车祸：既然活下来了，就不能白白活着</a></h4>
-                        <span>文/麦大人 01 胡歌又刷屏了。 近日他上了《朗读者》，而这一期的主题是“生命”，他用磁性的嗓音，朗读了一段《哈姆雷特》中的经典独白，相当震撼：...</span>
-                    </div>
-                    <a href="">
-                        <img src="{% static 'images/2259045-2986b9be86b01f63.jpg' %}" alt="">
-                    </a>
-                </li>
-                <li class="note-item">
-                    <div class="note-info">
-                        <h4>胡歌12年后首谈车祸：既然活下来了，就不能白白活着</h4>
-                        <span>文/麦大人 01 胡歌又刷屏了。 近日他上了《朗读者》，而这一期的主题是“生命”，他用磁性的嗓音，朗读了一段《哈姆雷特》中的经典独白，相当震撼：...</span>
-                    </div>
-                    <a href="">
-                        <img src="{% static 'images/2259045-2986b9be86b01f63.jpg' %}" alt="">
-                    </a>
-                </li>
-                <li class="note-item">
-                    <div class="note-info">
-                        <h4>胡歌12年后首谈车祸：既然活下来了，就不能白白活着</h4>
-                        <span>文/麦大人 01 胡歌又刷屏了。 近日他上了《朗读者》，而这一期的主题是“生命”，他用磁性的嗓音，朗读了一段《哈姆雷特》中的经典独白，相当震撼：...</span>
-                    </div>
-                    <a href="">
-                        <img src="{% static 'images/2259045-2986b9be86b01f63.jpg' %}" alt="">
-                    </a>
-                </li>
-                <li class="note-item">
-                    <div class="note-info">
-                        <h4>胡歌12年后首谈车祸：既然活下来了，就不能白白活着</h4>
-                        <span>文/麦大人 01 胡歌又刷屏了。 近日他上了《朗读者》，而这一期的主题是“生命”，他用磁性的嗓音，朗读了一段《哈姆雷特》中的经典独白，相当震撼：...</span>
-                    </div>
-                    <a href="">
-                        <img src="{% static 'images/2259045-2986b9be86b01f63.jpg' %}" alt="">
-                    </a>
-                </li>
-                <li class="note-item">
-                    <div class="note-info">
-                        <h4>胡歌12年后首谈车祸：既然活下来了，就不能白白活着</h4>
-                        <span>文/麦大人 01 胡歌又刷屏了。 近日他上了《朗读者》，而这一期的主题是“生命”，他用磁性的嗓音，朗读了一段《哈姆雷特》中的经典独白，相当震撼：...</span>
-                    </div>
-                    <a href="">
-                        <img src="{% static 'images/2259045-2986b9be86b01f63.jpg' %}" alt="">
-                    </a>
-                </li>
+                {% for blog in blogs %}
+                    <li class="note-item">
+                        <div class="note-info">
+                            <h4><a href="{% url 'blogdetail' blog.id%}">{{ blog.title }}</a></h4>
+                            <span>{{ blog.desc }}</span>
+                        </div>
+                        <a href="{% url 'blogdetail' blog.id%}">
+                            <img src="{% static 'images/2259045-2986b9be86b01f63.jpg' %}" alt="">
+                        </a>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
     </div>
@@ -65,9 +31,9 @@
             <ul>
                 {% for user in users %}
                     <li>
-                        <a href=""><img src="{% static 'images/ed2ea7f3-9d7d-41fc-a05a-daebb8097b0c.jpg' %}" alt=""></a>
+                        <a href="{% url 'otherblog' user.username %}"><img src="{% static 'images/ed2ea7f3-9d7d-41fc-a05a-daebb8097b0c.jpg' %}" alt=""></a>
                         <div class="author-info">
-                            <a href=""><span class="author-name">{{ user.username }}</span></a>
+                            <a href="{% url 'otherblog' user.username %}"><span class="author-name">{{ user.username }}</span></a>
                             <span class="author-words">写了122.5k字 · 0喜欢</span>
                         </div>
                         <div class="follow">

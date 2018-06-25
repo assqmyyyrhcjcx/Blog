@@ -66,3 +66,9 @@
 .article span{
     color: #999;
 }
+
+.no-article{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px;
+}

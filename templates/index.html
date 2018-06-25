@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/content.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/myblog.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/writeblog.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/blogdetail.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/wangEditor.css' %}" type="text/css">
     <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
@@ -28,6 +29,9 @@
         {% endblock %}
 
         {% block writeblog %}
+        {% endblock %}
+
+        {% block blogdetail %}
         {% endblock %}
     </div>
     <div class="footer">
